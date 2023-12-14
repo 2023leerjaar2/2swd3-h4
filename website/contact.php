@@ -1,3 +1,7 @@
+<?php
+    require_once "helperQ.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +15,6 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <script src="contact.js" defer></script>
     <title>Document</title>
 </head>
 <body>
@@ -38,22 +41,38 @@
 
     <main class="contactMain">
         <section class="card1">
-            <img class="cardImg" src="/website/img/callingCartoon.png" alt="Avatar" >
+            <img class="cardImg" src="img/callingCartoon.png" alt="Avatar" >
             <section class="container1">
-              <h4><b>Vragen</b></h4>
-              <p>zoek contact op</p>
+              <h2><b>Vragen?</b></h2>
+              <h3>neem contact op:</h3><br>
+              <h5>mail ons:</h5>
+              <p>6029404@mborijnland.nl</p><br>
+              <h5>bel ons:</h5>
+              <p>0612345678</p>
             </section>
-            <button id="contactButton">Contact</button>
         </section> 
 
-        <section class="card2">
-            <img class="cardImg"  src="/website/img/supportRobot.jpg" alt="Avatar" >
-            <section class="container2">
-              <h4><b>Problemen</b></h4>
-              <p>vraag om hulp</p>
-            </section>
-            <a href="hulppagina.html"><button>Hulp</button></a>
+        <section class="invulForm">
+            <form action="contact.php" method="POST">
+                <p>volledige naam</p>
+                <input type="text" name="vNaam">
+                <p>emailadres</p>
+                <input type="text" name="email">
+                <p>product</p>
+                <input type="text" name="product">
+                <p>probleem</p>
+                <input type="text" name="probleem"><br>
+                <button type="submit" name="submit">Verstuur</button>
+            </form>
         </section>
+
+
+        <?php
+                        if(isset($_POST['submit'])){
+                            probleem($_POST);
+                        }
+
+        ?>
     </main>
 
 
