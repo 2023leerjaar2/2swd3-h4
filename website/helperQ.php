@@ -1,6 +1,6 @@
 <?php 
     require_once "dbQuinten.php";
-    require_once "contact.php";
+
     
     function probleem($klacht){
         $naam = $klacht['naam'];

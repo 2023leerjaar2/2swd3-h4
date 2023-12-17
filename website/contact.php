@@ -23,9 +23,9 @@
 		<a href="#" class="logo"><img src="img/logo.png" alt="logo"></a>
 		<ul class="navbar">
 			<li><a href="/index.html">Home</a></li>
-			<li><a href="#about">About</a></li>
+			<li><a href=./website/aboutUs.php">About</a></li>
 			<li><a href="#menu">Menu</a></li>
-			<li><a href="#contact">Contact</a></li>
+			<li><a href="./website/contact.php">Contact</a></li>
 		</ul>
 
 		<div class="h-icons">
