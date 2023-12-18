@@ -22,10 +22,10 @@
 		<!-- <a href="#" class="logo">Food<span>Fun</span></a> -->
 		<a href="#" class="logo"><img src="img/logo.png" alt="logo"></a>
 		<ul class="navbar">
-			<li><a href="/index.html">Home</a></li>
+			<li><a href="`./index.html">Home</a></li>
 			<li><a href=./website/aboutUs.php">About</a></li>
 			<li><a href="#menu">Menu</a></li>
-			<li><a href="./website/contact.php">Contact</a></li>
+			<li><a href="./contact.php">Contact</a></li>
 		</ul>
 
 		<div class="h-icons">
@@ -55,7 +55,7 @@
         <section class="invulForm">
             <form action="contact.php" method="POST">
                 <p>volledige naam</p>
-                <input type="text" name="vNaam">
+                <input type="text" name="naam">
                 <p>emailadres</p>
                 <input type="text" name="email">
                 <p>product</p>

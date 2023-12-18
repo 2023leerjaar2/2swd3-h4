@@ -7,7 +7,7 @@
         $email = $klacht['email'];
         $product = $klacht['product'];
         $probleem = $klacht['probleem'];
-        $sql = "INSERT INTO problemen VALUES (NULL, '$naam', '$email', '$product', '$probleem'";
+        $sql = "INSERT INTO problemen VALUES (NULL, '$naam', '$email', '$product', '$probleem')";
         $result = connect()->query($sql);
 
 
