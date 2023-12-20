@@ -34,7 +34,34 @@
 			<div class="bx bx-menu" id="menu-icon"></div>
 		</div>
 	</header>
-
+	<main>
+		<section>
+		<article>
+				<img src="img/callingCartoon.png" alt="" width="100px">
+				<h2>Quinten Schaap</h2>
+				<p>18 jaar</p>
+				<p>Software developer</p>
+			</article>
+			<article>
+				<img src="img/callingCartoon.png" alt="" width="100px">
+				<h2>Juan Santiago Peralta</h2>
+				<p>18 jaar</p>
+				<p>Software developer</p>
+			</article>
+			<article>
+				<img src="img/callingCartoon.png" alt="" width="100px">
+				<h2>Yassine El Ouali</h2>
+				<p>18 jaar</p>
+				<p>Software developer</p>
+			</article>
+			<article>
+				<img src="img/callingCartoon.png" alt="" width="100px">
+				<h2>Ayoub El Ouali</h2>
+				<p>17 jaar</p>
+				<p>Software developer</p>
+			</article>
+		</section>
+	</main>
 	
 
     <script src="https://unpkg.com/scrollreveal"></script>
