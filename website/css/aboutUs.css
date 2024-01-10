@@ -17,7 +17,7 @@
 	--p-font: 1.1rem;
 }
 body{
-	background: var(--bg-color);
+
 	color: var(--text-color);
 }
 header{
@@ -77,7 +77,7 @@ span{
 	cursor: pointer;
 	display: none;
 }
-section{
+header section{
 	padding: 90px 15% 80px;
 }
 .home{
@@ -124,7 +124,11 @@ header.sticky{
 	box-shadow: 0px 4px 15px rgb(0 0 0 / 8%);
 }
 
-
 main {
-	background-color: black;
+	padding-top: 20vh;
+	padding-left: 6vw;
+}
+main section {
+	display: grid;
+	grid-template-columns: repeat(4,1fr);
 }
