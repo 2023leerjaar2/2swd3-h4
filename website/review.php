@@ -29,6 +29,7 @@
 			<li><a href="aboutUs.php">About</a></li>
 			<li><a href="#menu">Menu</a></li>
 			<li><a href="./contact.php">Contact</a></li>
+            <li><a href="./review.php">reviews</a></li>
 		</ul>
 
 		<div class="h-icons">
@@ -45,14 +46,20 @@
 
         <section class="invulForm">
             <form action="contact.php" method="POST">
-                <p>volledige naam</p>
+                <p>Naam:</p>
                 <input type="text" name="naam">
-                <p>emailadres</p>
-                <input type="text" name="email">
-                <p>product</p>
-                <input type="text" name="product">
-                <p>probleem</p>
-                <input type="text" name="probleem"><br>
+                <p>Recept:</p>
+                <input type="text" name="recept">
+                <p>Review:</p>
+                <input type="text" name="review">
+                <p>Cijfer:</p>
+                <select name="cijfer" id="">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+            </select><br> <br>
                 <button type="submit" name="submit">Verstuur</button>
             </form>
         </section>
