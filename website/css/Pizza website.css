@@ -340,6 +340,11 @@ header.sticky {
 	background: #ff9100;
 	border-radius: 5rem;
 }
+.highlighted {
+	background-color: #ff9100;
+	color: #fff;
+	transition: background-color 0.5s ease, color 0.5s ease;
+}
 
 @media (max-width: 1690px) {
 	section {
