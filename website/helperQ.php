@@ -1,5 +1,5 @@
 <?php 
-    require_once "dbQuinten.php";
+    require_once "dbconnect.php";
 
     
     function probleem($klacht){
