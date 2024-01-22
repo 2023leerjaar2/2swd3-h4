@@ -4,105 +4,66 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mijn Dashboard</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-
-        header {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 1em 0;
-        }
-
-        nav {
-            background-color: #555;
-            color: #fff;
-            padding: 1em;
-        }
-
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            margin-right: 1em;
-        }
-
-        section {
-            padding: 20px;
-        }
-
-        .reviews, .comments, .klachten, .home, .recepten {
-            display: none;
-        }
-
-        #tab-selector {
-            margin-bottom: 20px;
-        }
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="">
 </head>
 <body>
 
-    <header>
-        <h1>Mijn Dashboard</h1>
-    </header>
 
-    <nav>
-        <a href="#" onclick="showTab('home')">Home</a>
-        <a href="#" onclick="showTab('reviews')">Reviews</a>
-        <a href="#" onclick="showTab('comments')">Comments</a>
-        <a href="#" onclick="showTab('klachten')">Klachten</a>
-        <a href="#" onclick="showTab('recepten')">Recepten</a>
-    </nav>
+    <div id="dashboard">
 
-    <div id="tab-selector">
-        <label for="tab-select">Selecteer een tab:</label>
-        <select id="tab-select" onchange="showTab(this.value)">
-            <option value="home">Home</option>
-            <option value="reviews">Reviews</option>
-            <option value="comments">Comments</option>
-            <option value="klachten">Klachten</option>
-            <option value="recepten">Recepten</option>
-        </select>
+        <div id="sidebar">
+            <a href="#" onclick="showTab('home')"><i class="fas fa-home"></i> Home</a>
+            <a href="#" onclick="showTab('reviews')"><i class="fas fa-star"></i> Reviews</a>
+            <a href="#" onclick="showTab('comments')"><i class="fas fa-comments"></i> Comments</a>
+            <a href="#" onclick="showTab('klachten')"><i class="fas fa-exclamation-triangle"></i> Klachten</a>
+            <a href="#" onclick="showTab('recepten')"><i class="fas fa-book-open"></i> Recepten</a>
+        </div>
+
+        <div id="content">
+            <section class="home">
+                <h2>Welkom op de Home-pagina</h2>
+                <!-- Inhoud van de Home-pagina -->
+                <p>Dit is de hoofdpagina van jouw dashboard. Hier kun je belangrijke informatie en meldingen weergeven.</p>
+            </section>
+
+            <section class="reviews">
+                <h2>Reviews</h2>
+                <!-- Inhoud van de Reviews-sectie -->
+                <p>Bekijk hier de laatste reviews van gebruikers.</p>
+            </section>
+
+            <section class="comments">
+                <h2>Comments</h2>
+                <!-- Inhoud van de Comments-sectie -->
+                <p>Bekijk en reageer op opmerkingen van gebruikers.</p>
+            </section>
+
+            <section class="klachten">
+                <h2>Klachten</h2>
+                <!-- Inhoud van de Klachten-sectie -->
+                <p>Volg de klachten van gebruikers en neem actie waar nodig.</p>
+            </section>
+
+            <section class="recepten">
+                <h2>Recepten</h2>
+                <!-- Inhoud van de Recepten-sectie -->
+                <p>Voeg nieuwe recepten toe en deel ze met de community.</p>
+            </section>
+        </div>
+
     </div>
 
-    <section class="home">
-        <h2>Welkom op de Home-pagina</h2>
-        <!-- Inhoud van de Home-pagina -->
-    </section>
 
-    <section class="reviews">
-        <h2>Reviews</h2>
-        <!-- Inhoud van de Reviews-sectie -->
-    </section>
 
-    <section class="comments">
-        <h2>Comments</h2>
-        <!-- Inhoud van de Comments-sectie -->
-    </section>
-
-    <section class="klachten">
-        <h2>Klachten</h2>
-        <!-- Inhoud van de Klachten-sectie -->
-    </section>
-
-    <section class="recepten">
-        <h2>Recepten</h2>
-        <!-- Inhoud van de Recepten-sectie -->
-    </section>
-
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         function showTab(tabName) {
             // Verberg alle secties
-            document.querySelectorAll('section').forEach(section => {
-                section.style.display = 'none';
-            });
+            $('section').hide();
 
             // Toon de geselecteerde sectie
-            document.querySelector(`.${tabName}`).style.display = 'block';
+            $('.' + tabName).show();
         }
     </script>
 
