@@ -1,3 +1,6 @@
+<?php
+require_once "helperJ.php"; 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -47,8 +50,29 @@
 
             <section class="recepten">
                 <h2>Recepten</h2>
-                <!-- Inhoud van de Recepten-sectie -->
+                <?php
+                if(isset($_POST["submit"]))
+                createRecept($_POST); 
+                ?>
+            <form method="POST">
+            titel:<br>
+            <input type="text" name="titel"><br><br>
+            land:<br>
+            <input type="text" name="land"><br><br>
+            moeilijkheidsgraad:<br>
+            <input type="number" name="moeilijkheidsgraad"><br><br>
+            spicyness:<br>
+            <input type="number" name="spicyness"><br><br>
+            vlees soort:<br>
+            <input type="text" name="vlees_soort"><br><br>
+            afbeelding: <br>
+            <input type="text" name="afbeelding"><br><br>
+            inhoud: <br>
+            <input type ="text" name="inhoud"><br><br>
+            <input type="submit" name="submit" value="submit">
+            </form>
                 <p>Voeg nieuwe recepten toe en deel ze met de community.</p>
+
             </section>
         </div>
 
