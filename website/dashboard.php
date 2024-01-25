@@ -50,11 +50,12 @@ require_once "helperJ.php";
 
             <section class="recepten">
                 <h2>Recepten</h2>
+                <p>Voeg nieuwe recepten toe en deel ze met de community.</p>
                 <?php
                 if(isset($_POST["submit"]))
                 createRecept($_POST); 
                 ?>
-            <form method="POST">
+            <form method="POST" enctype="multipart/form-data">
             titel:<br>
             <input type="text" name="titel"><br><br>
             land:<br>
@@ -66,12 +67,11 @@ require_once "helperJ.php";
             vlees soort:<br>
             <input type="text" name="vlees_soort"><br><br>
             afbeelding: <br>
-            <input type="text" name="afbeelding"><br><br>
-            inhoud: <br>
+            <input type="file" name="afbeelding"><br><br>
+            inhoud:<br>
             <input type ="text" name="inhoud"><br><br>
             <input type="submit" name="submit" value="submit">
             </form>
-                <p>Voeg nieuwe recepten toe en deel ze met de community.</p>
 
             </section>
         </div>
