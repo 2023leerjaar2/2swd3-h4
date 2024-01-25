@@ -21,6 +21,7 @@ require_once "helperJ.php";
             <a href="#" onclick="showTab('comments')"><i class="fas fa-comments"></i> Comments</a>
             <a href="#" onclick="showTab('klachten')"><i class="fas fa-exclamation-triangle"></i> Klachten</a>
             <a href="#" onclick="showTab('recepten')"><i class="fas fa-book-open"></i> Recepten</a>
+            <a href="#" onclick="showTab('verwijderen')"><i class="fas fa-book-open"></i> verwijderen</a>
         </div>
 
         <div id="content">
@@ -73,6 +74,11 @@ require_once "helperJ.php";
             <input type="submit" name="submit" value="submit">
             </form>
 
+            </section>
+            <section class="verwijderen">
+                <h2>Verwijderen</h2>
+                <!-- Inhoud van de Klachten-sectie -->
+                <p>Verwijder hier je recepten.</p>
             </section>
         </div>
 

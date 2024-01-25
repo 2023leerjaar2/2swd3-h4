@@ -48,4 +48,12 @@ function uploadImage($file) {
         return false; // Geen afbeelding geüpload of er is een fout opgetreden
     }
 }
+
+function getAllRecepten(){
+    $sql = "SELECT * FROM recepten";
+    $result= connect()->query($sql);
+    $recepten = $result->fetch_all();
+    return $recepten;
+    
+}
 ?>
