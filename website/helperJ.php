@@ -51,4 +51,11 @@ function getAllRecepten(){
     return $recepten;
     
 }
+
+function DeleteRecept($data){
+    $id = $data['recept_id'];
+    $sql ="DELETE FROM recepten WHERE recept_id = '$id'";
+    connect()->query($sql);
+    header("Location: dashboard.php");
+}
 ?>

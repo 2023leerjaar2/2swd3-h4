@@ -77,7 +77,29 @@ require_once "helperJ.php";
             </section>
             <section class="verwijderen">
                 <h2>Verwijderen</h2>
-                <!-- Inhoud van de Klachten-sectie -->
+                <?php foreach(getAllRecepten() as $recepten){ ?>
+			<article class="row">
+				<article class="menu-text">
+					<article class="menu-left">
+						<h4><?= $recepten[2]; ?></h4>
+					</article>
+					<article class="menu-right">
+						<h5><?= $recepten[3]; ?></h5>
+					</article>
+				</article>
+				<p>moeilijkheidsgraad: <?= $recepten[4]; ?></p>
+				<p>spicyness: <?= $recepten[5]; ?></p>
+				<p>vlees soort: <?= $recepten[6]; ?></p>
+				<p>info: <?= $recepten[8]; ?></p>
+			</article>
+                <?php if(isset($_POST["delete"]))
+                        DeleteRecept($_POST); 
+                ?>
+                <form method="post">
+                    <input type="hidden" name="recept_id" value="<?php echo $recepten[0]; ?>">
+                    <input class="button_overal" type="submit" name="delete" value="delete">
+                </form>
+                <?php }?>
                 <p>Verwijder hier je recepten.</p>
             </section>
         </div>
