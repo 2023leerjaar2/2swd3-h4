@@ -22,7 +22,7 @@
 		<!-- <a href="#" class="logo">Food<span>Fun</span></a> -->
 		<a href="#" class="logo"><img src="./img/MicrosoftTeams-image (7) (1).png" alt="logo" width="100px"  </a>
 		<ul class="navbar">
-			<li><a href="./index.html">Home</a></li>
+			<li><a href="./index.php">Home</a></li>
 			<li><a href="./aboutUs.php">About</a></li>
 			<li><a href="#menu">Menu</a></li>
 			<li><a href="./contact.php">Contact</a></li>

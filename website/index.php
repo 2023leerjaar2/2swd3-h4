@@ -22,7 +22,7 @@ require_once "helperJ.php";
     <header>
 		<a href="#" class="logo"><img src="img/MicrosoftTeams-image (7) (1).png" alt="logo"></a>
 		<ul class="navbar">
-			<li><a href="./index.html">Home</a></li>
+			<li><a href="./index.php">Home</a></li>
 			<li><a href="./aboutUs.php">About</a></li>
 			<li><a href="#menu">Menu</a></li>
 			<li><a href="./contact.php">Contact</a></li>
@@ -43,7 +43,7 @@ require_once "helperJ.php";
 				<h1><span>Welkom</span> bij de heerlijke wereld van barbecue-genot!</h1>
 				<p>
 					Ontdek het volledige barbecuekookboek hier en  <br> laat je smaakpapillen feestvieren!</p>
-				<a href="#" class="btn">Koop kookboek</a>
+				<a href="https://www.bol.com/nl/nl/p/sterke-recepten/9300000163873691/?bltgh=sqRUFpxW48GVZXTNQuROhw.2_18.20.ProductTitle" class="btn">Koop kookboek</a>
 			</div>
 
 			<div class="home-img rotate-image">
@@ -58,47 +58,53 @@ require_once "helperJ.php";
 			</div>
 
 			<div class="about-text">
-				<h2>The Delicious Food<br> For a Good Mood</h2>
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, ipsum?<br><br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, dolore pariatur! Enim inventore excepturi laudantium necessitatibus placeat mollitia, incidunt consequatur.</p>
-				<a href="#" class="btn">Choose a Pizza</a>
+				<h2>Heerlijke eten <br> Met Mooie recepten</h2>
+				<p>Wil je nou ook lekker gaan eten maar weet je niet wat je moet maken<br><br> Klik dan op de knop hier beneden en wodt verwijst naar onze beste recepten</p>
+				<a href="recepten.php" class="btn">Bekijk recepten</a>
 			</div>
 
 		</section>
 
 		<section class="menu" id="menu">
-		<article class="main-text">
-			<h2>Recepten</h2>
-			<p>Dit zijn de <br> meest gevraagde recepten </p>
-		</article>
-		<article class="menu-content">
-			
-		<?php foreach(getAllRecepten() as $recepten){ ?>
-			<article class="row">
-				<img src="../website/<?= $recepten[7]; ?>" alt="<?= $recepten[7]; ?>">
-				<article class="menu-text">
-					<article class="menu-left">
-						<h4><?= $recepten[2]; ?></h4>
-					</article>
-					<article class="menu-right">
-						<h5><?= $recepten[3]; ?></h5>
-					</article>
-				</article>
-				<p>moeilijkheidsgraad: <?= $recepten[4]; ?></p>
-				<p>spicyness: <?= $recepten[5]; ?></p>
-				<p>vlees soort: <?= $recepten[6]; ?></p>
-				<p>info: <?= $recepten[8]; ?></p>
-				<article class="star">
-					<a href="#"><i class='bx bxs-star' ></i></a>
-					<a href="#"><i class='bx bxs-star' ></i></a>
-					<a href="#"><i class='bx bxs-star' ></i></a>
-					<a href="#"><i class='bx bxs-star' ></i></a>
-					<a href="#"><i class='bx bxs-star' ></i></a>
-				</article>
-			</article>
-			<?php }?>
-		</article>
+    <article class="main-text">
+        <h2>3 recente Recepten</h2>
+        <p>Dit zijn de <br> meest gevraagde recepten </p>
+    </article>
+    <article class="menu-content">
+        <?php 
+            // Assuming getAllRecepten() returns an array of recipes
+            $receptenList = getAllRecepten();
 
-	</section>
+            // Get the last three recipes
+            $recentRecipes = array_slice($receptenList, -3, 3);
+
+            foreach($recentRecipes as $recepten){ 
+        ?>
+            <article class="row">
+                <img src="../website/<?= $recepten[7]; ?>" alt="<?= $recepten[7]; ?>">
+                <article class="menu-text">
+                    <article class="menu-left">
+                        <h4><?= $recepten[2]; ?></h4>
+                    </article>
+                    <article class="menu-right">
+                        <h5><?= $recepten[3]; ?></h5>
+                    </article>
+                </article>
+                <p>moeilijkheidsgraad: <?= $recepten[4]; ?></p>
+                <p>spicyness: <?= $recepten[5]; ?></p>
+                <p>vlees soort: <?= $recepten[6]; ?></p>
+                <p>info: <?= $recepten[8]; ?></p>
+                <article class="star">
+                    <a href="#"><i class='bx bxs-star' ></i></a>
+                    <a href="#"><i class='bx bxs-star' ></i></a>
+                    <a href="#"><i class='bx bxs-star' ></i></a>
+                    <a href="#"><i class='bx bxs-star' ></i></a>
+                    <a href="#"><i class='bx bxs-star' ></i></a>
+                </article>
+            </article>
+        <?php }?>
+    </article>
+</section>
 
 		<section class="contact" id="contact">
 			<div class="main-contact">

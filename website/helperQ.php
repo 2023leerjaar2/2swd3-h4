@@ -46,7 +46,7 @@
 
                     connect()->close();
                     echo "review is geplaatst";
-                } catch (Excetion $e){
+                } catch (Exception $e){
                     $error = "query is niet goed";
                     die($error);                
                 }
