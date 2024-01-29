@@ -1,0 +1,144 @@
+<?php
+require_once "helperJ.php";
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food website</title>
+
+    <link rel="stylesheet" href="css/Pizza website.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+		<a href="#" class="logo"><img src="img/MicrosoftTeams-image (7) (1).png" alt="logo"></a>
+		<ul class="navbar">
+			<li><a href="./index.html">Home</a></li>
+			<li><a href="./aboutUs.php">About</a></li>
+			<li><a href="#menu">Menu</a></li>
+			<li><a href="./contact.php">Contact</a></li>
+			<li><a href="./review.php">Reviews</a></li>
+		</ul>
+
+		<div class="h-icons">
+			<input type="text" id="searchInput" placeholder="">
+            <button onclick="search()">Zoeken</button>
+			<a href="#"><i class='bx bx-cart' ></i></a>
+			<div class="bx bx-menu" id="menu-icon"></div>
+		</div>
+	</header>
+
+
+		<section class="home" id="home">
+			<div class="home-text">
+				<h1><span>Welkom</span> bij de heerlijke wereld van barbecue-genot!</h1>
+				<p>
+					Ontdek het volledige barbecuekookboek hier en  <br> laat je smaakpapillen feestvieren!</p>
+				<a href="#" class="btn">Koop kookboek</a>
+			</div>
+
+			<div class="home-img rotate-image">
+				<img src="img/hero.png" alt="home">
+			</div>
+		</section>
+
+
+		<section class="about" id="about">
+			<div class="about-img">
+				<img src="img/burger.png" alt="">
+			</div>
+
+			<div class="about-text">
+				<h2>The Delicious Food<br> For a Good Mood</h2>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, ipsum?<br><br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, dolore pariatur! Enim inventore excepturi laudantium necessitatibus placeat mollitia, incidunt consequatur.</p>
+				<a href="#" class="btn">Choose a Pizza</a>
+			</div>
+
+		</section>
+
+
+		<section class="menu" id="menu">
+        <article class="main-text">
+            <h2>Recepten</h2>
+            <p>Dit zijn de <br> meest recente recepten </p>
+        </article>
+        <article class="menu-content">
+            <?php
+  
+            $allRecepten = getAllRecepten();
+
+      
+            usort($allRecepten, function($a, $b) {
+                return strtotime($b['timestamp']) - strtotime($a['timestamp']);
+            });
+
+         
+            $recentRecepten = array_slice($allRecepten, 0, 3);
+
+            foreach ($recentRecepten as $recepten): ?>
+                <article class="row">
+                    <img src="../website/<?= $recepten['image']; ?>" alt="<?= $recepten['image']; ?>">
+                    <article class="menu-text">
+                        <article class="menu-left">
+                            <h4><?= $recepten['name']; ?></h4>
+                        </article>
+                        <article class="menu-right">
+                            <h5><?= $recepten['price']; ?></h5>
+                        </article>
+                    </article>
+                    <p>Moeilijkheidsgraad: <?= $recepten['difficulty']; ?></p>
+                    <p>Spicyness: <?= $recepten['spicyness']; ?></p>
+                    <p>Vleessoort: <?= $recepten['meat_type']; ?></p>
+                    <p>Info: <?= $recepten['info']; ?></p>
+                    <article class="star">
+                        <a href="#"><i class='bx bxs-star' ></i></a>
+                        <a href="#"><i class='bx bxs-star' ></i></a>
+                        <a href="#"><i class='bx bxs-star' ></i></a>
+                        <a href="#"><i class='bx bxs-star' ></i></a>
+                        <a href="#"><i class='bx bxs-star' ></i></a>
+                    </article>
+                </article>
+            <?php endforeach; ?>
+        </article>
+    </section>
+
+		<section class="contact" id="contact">
+			<div class="main-contact">
+				<div class="contact-content">
+					<h4>Services</h4>
+					<li><a href="#home">Home</a></li>
+					<li><a href="#about">About</a></li>
+					<li><a href="#menu">Menu</a></li>
+					<li><a href="#contact">Contact</a></li>
+				</div>
+
+			</div>
+		</section>
+
+		<div class="last-text">
+			<p>© Developed by Ayoub</p>
+		</div>
+
+
+	<a href="#home" class="scroll-top">
+		<i class='bx bx-up-arrow-alt' ></i>
+	</a>
+
+
+
+	<script src="https://unpkg.com/scrollreveal"></script>
+	<script type="text/javascript" src="js/Pizza website.js"></script>
+	<script type="text/javascript" src="js/s.js"></script>
+
+   
+</body>
+</html>

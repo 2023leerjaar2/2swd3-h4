@@ -85,10 +85,11 @@ span {
 }
 
 section {
-	padding: 90px 15% 80px;
+	padding: 80px 15% 70px;
 }
 .rotate-image {
 	animation: rotateAnimation 10s ease-in-out infinite;
+	animation: rotateAnimation 20s ease-in-out infinite;
   }
 @keyframes rotateAnimation {
 	from {
@@ -106,8 +107,9 @@ section {
 	}
 }
 
+
 .home {
-	height: 88vh;
+	height: 130vh;
 	width: 100%;
 	position: relative;
 	display: grid;
