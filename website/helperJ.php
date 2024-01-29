@@ -9,13 +9,10 @@ function createRecept($data){
     $vlees_soort = $data["vlees_soort"];
     $inhoud = $data["inhoud"];
 
-    // Controleer of het bestand is geüpload
     if(isset($_FILES['afbeelding'])) {
-        // Afbeelding uploaden
         $uploadedImage = uploadImage($_FILES['afbeelding']);
 
         if ($uploadedImage) {
-            // Afbeelding succesvol geüpload, voeg de gegevens toe aan de database
             $sql = "INSERT INTO recepten (titel, land, moeilijkheidsgraad, spicyness, vlees_soort, afbeelding, inhoud) VALUES ('$titelRecepten', '$land', '$moeilijkheidsgraad', '$spicyness', '$vlees_soort', '$uploadedImage', '$inhoud')";
             
             if (connect()->query($sql)) {
@@ -31,21 +28,34 @@ function createRecept($data){
     }
 }
 function uploadImage($file) {
-    $uploadDirectory = 'img/'; // Map waarin je de afbeeldingen wilt opslaan
+    $uploadDirectory = 'img/';
 
-    // Controleer of een bestand is geüpload en of er geen fouten zijn opgetreden
     if(isset($file['name']) && $file['error'] === UPLOAD_ERR_OK) {
-        $image_name = basename($file['name']); // Bestandsnaam uit het uploadformulier halen
+        $image_name = basename($file['name']); 
         $image_path = $uploadDirectory . $image_name;
 
-        // Verplaats het bestand naar de img-map
         if (move_uploaded_file($file['tmp_name'], $image_path)) {
-            return $image_path; // Retourneer het pad naar het opgeslagen bestand
+            return $image_path; 
         } else {
-            return false; // Uploaden mislukt
+            return false; 
         }
     } else {
-        return false; // Geen afbeelding geüpload of er is een fout opgetreden
+        return false;
     }
+}
+
+function getAllRecepten(){
+    $sql = "SELECT * FROM recepten";
+    $result= connect()->query($sql);
+    $recepten = $result->fetch_all();
+    return $recepten;
+    
+}
+
+function DeleteRecept($data){
+    $id = $data['recept_id'];
+    $sql ="DELETE FROM recepten WHERE recept_id = '$id'";
+    connect()->query($sql);
+    header("Location: dashboard.php");
 }
 ?>

@@ -21,6 +21,7 @@ require_once "helperJ.php";
             <a href="#" onclick="showTab('comments')"><i class="fas fa-comments"></i> Comments</a>
             <a href="#" onclick="showTab('klachten')"><i class="fas fa-exclamation-triangle"></i> Klachten</a>
             <a href="#" onclick="showTab('recepten')"><i class="fas fa-book-open"></i> Recepten</a>
+            <a href="#" onclick="showTab('verwijderen')"><i class="fas fa-book-open"></i> verwijderen</a>
         </div>
 
         <div id="content">
@@ -73,6 +74,33 @@ require_once "helperJ.php";
             <input type="submit" name="submit" value="submit">
             </form>
 
+            </section>
+            <section class="verwijderen">
+                <h2>Verwijderen</h2>
+                <?php foreach(getAllRecepten() as $recepten){ ?>
+			<article class="row">
+				<article class="menu-text">
+					<article class="menu-left">
+						<h4><?= $recepten[2]; ?></h4>
+					</article>
+					<article class="menu-right">
+						<h5><?= $recepten[3]; ?></h5>
+					</article>
+				</article>
+				<p>moeilijkheidsgraad: <?= $recepten[4]; ?></p>
+				<p>spicyness: <?= $recepten[5]; ?></p>
+				<p>vlees soort: <?= $recepten[6]; ?></p>
+				<p>info: <?= $recepten[8]; ?></p>
+			</article>
+                <?php if(isset($_POST["delete"]))
+                        DeleteRecept($_POST); 
+                ?>
+                <form method="post">
+                    <input type="hidden" name="recept_id" value="<?php echo $recepten[0]; ?>">
+                    <input class="button_overal" type="submit" name="delete" value="delete">
+                </form>
+                <?php }?>
+                <p>Verwijder hier je recepten.</p>
             </section>
         </div>
 
