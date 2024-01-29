@@ -6,6 +6,7 @@
 	text-decoration: none;
 	list-style: none;
 	scroll-behavior: smooth;
+	background-color: black;
 	}
 :root{
 	--text-color: #302e29;
