@@ -42,10 +42,10 @@
 
 
 
+<p>nigger</p>
 
-
-        <section class="invulForm">
-            <form action="contact.php" method="POST">
+        <section class="invulform">
+            <form action="review.php" method="POST">
                 <p>Naam:</p>
                 <input type="text" name="naam">
                 <p>Recept:</p>
