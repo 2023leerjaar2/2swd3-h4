@@ -1,9 +1,6 @@
 <?php
     require_once "helperQ.php";
 ?>
- <?php
-    require_once "helperQ.php";
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -42,7 +39,7 @@
 
 
 
-<p>nigger</p>
+
 
         <section class="invulform">
             <form action="review.php" method="POST">
@@ -51,7 +48,7 @@
                 <p>Recept:</p>
                 <input type="text" name="recept">
                 <p>Review:</p>
-                <input type="text" name="review">
+                <input type="text" name="comment">
                 <p>Cijfer:</p>
                 <select name="cijfer" id="">
                     <option value="1">1</option>
@@ -68,10 +65,27 @@
 
         <?php
                         if(isset($_POST['submit'])){
-                            probleem($_POST);
+                            review($_POST);
                         }
 
         ?>
+
+
+        
+        </section class="allReviews">
+            <?php
+
+            foreach (getReviews() as $allReviews) {?>
+            <article>
+                <p>Naam: <?= $allReviews[1]?></p>
+                <p>Recept: <?= $allReviews[2]?></p>
+                <p>Review: <?= $allReviews[3]?></p>
+                <p>Cijfer: <?= $allReviews[4]?></p>
+            </article>
+            <?php } ?>
+        <section>
+
+        </section>
     </main>
 
 

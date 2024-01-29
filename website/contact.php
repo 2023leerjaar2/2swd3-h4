@@ -68,12 +68,12 @@
         </section>
 
 
-        <?php
-                        if(isset($_POST['submit'])){
-                            probleem($_POST);
-                        }
+                <?php
+                                if(isset($_POST['submit'])){
+                                    probleem($_POST);
+                                }
 
-        ?>
+                ?>
     </main>
 
 
