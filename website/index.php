@@ -72,10 +72,10 @@ require_once "helperJ.php";
     </article>
     <article class="menu-content">
         <?php 
-            // Assuming getAllRecepten() returns an array of recipes
+     
             $receptenList = getAllRecepten();
 
-            // Get the last three recipes
+    
             $recentRecipes = array_slice($receptenList, -3, 3);
 
             foreach($recentRecipes as $recepten){ 
@@ -120,7 +120,7 @@ require_once "helperJ.php";
 		</section>
 
 		<div class="last-text">
-			<p>© Developed by Ayoub</p>
+			<p>© Developed by ayoub  juan  quinten  yassine</p>
 		</div>
 
 

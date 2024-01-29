@@ -430,7 +430,7 @@ header.sticky {
 
 	.home {
 		grid-template-columns: 1fr;
-		height: 114vh;
+		height: 154vh;
 	}
 
 	.home-img {
@@ -444,7 +444,7 @@ header.sticky {
 	}
 
 	.home-text {
-		padding-top: 50px;
+		padding-top: 10px;
 	}
 
 	.about {
