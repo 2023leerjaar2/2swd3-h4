@@ -58,4 +58,39 @@ function DeleteRecept($data){
     connect()->query($sql);
     header("Location: dashboard.php");
 }
+
+// In helperJ.php or another relevant file
+function getGeneralComments() {
+    $conn = connect(); // Assuming you have a connect function for database connection
+
+    $comments = [];
+
+    // Replace "your_general_comments_table" with your actual table name
+    $sql = "SELECT * FROM your_general_comments_table ORDER BY timestamp DESC";
+    $result = $conn->query($sql);
+
+    if ($result) {
+        while ($row = $result->fetch_assoc()) {
+            $comments[] = $row;
+        }
+    }
+
+    $conn->close();
+
+    return $comments;
+}
+
+// Voorbeeld van de addGeneralComment-functie
+function addGeneralComment($userName, $commentText) {
+    // Implementeer logica om een nieuwe algemene opmerking aan de database toe te voegen
+    // Gebruik prepared statements om SQL-injecties te voorkomen
+
+    // Vervang dit met de daadwerkelijke logica om opmerkingen aan de database toe te voegen
+    $sql = "INSERT INTO your_table_name (user_name, comment_text) VALUES ('$userName', '$commentText')";
+    connect()->query($sql);
+
+    // Vervang bovenstaande code met de daadwerkelijke implementatie
+}
+
+
 ?>

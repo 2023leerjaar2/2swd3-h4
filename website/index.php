@@ -65,51 +65,40 @@ require_once "helperJ.php";
 
 		</section>
 
-
 		<section class="menu" id="menu">
-        <article class="main-text">
-            <h2>Recepten</h2>
-            <p>Dit zijn de <br> meest recente recepten </p>
-        </article>
-        <article class="menu-content">
-            <?php
-  
-            $allRecepten = getAllRecepten();
+		<article class="main-text">
+			<h2>Recepten</h2>
+			<p>Dit zijn de <br> meest gevraagde recepten </p>
+		</article>
+		<article class="menu-content">
+			
+		<?php foreach(getAllRecepten() as $recepten){ ?>
+			<article class="row">
+				<img src="../website/<?= $recepten[7]; ?>" alt="<?= $recepten[7]; ?>">
+				<article class="menu-text">
+					<article class="menu-left">
+						<h4><?= $recepten[2]; ?></h4>
+					</article>
+					<article class="menu-right">
+						<h5><?= $recepten[3]; ?></h5>
+					</article>
+				</article>
+				<p>moeilijkheidsgraad: <?= $recepten[4]; ?></p>
+				<p>spicyness: <?= $recepten[5]; ?></p>
+				<p>vlees soort: <?= $recepten[6]; ?></p>
+				<p>info: <?= $recepten[8]; ?></p>
+				<article class="star">
+					<a href="#"><i class='bx bxs-star' ></i></a>
+					<a href="#"><i class='bx bxs-star' ></i></a>
+					<a href="#"><i class='bx bxs-star' ></i></a>
+					<a href="#"><i class='bx bxs-star' ></i></a>
+					<a href="#"><i class='bx bxs-star' ></i></a>
+				</article>
+			</article>
+			<?php }?>
+		</article>
 
-      
-            usort($allRecepten, function($a, $b) {
-                return strtotime($b['timestamp']) - strtotime($a['timestamp']);
-            });
-
-         
-            $recentRecepten = array_slice($allRecepten, 0, 3);
-
-            foreach ($recentRecepten as $recepten): ?>
-                <article class="row">
-                    <img src="../website/<?= $recepten['image']; ?>" alt="<?= $recepten['image']; ?>">
-                    <article class="menu-text">
-                        <article class="menu-left">
-                            <h4><?= $recepten['name']; ?></h4>
-                        </article>
-                        <article class="menu-right">
-                            <h5><?= $recepten['price']; ?></h5>
-                        </article>
-                    </article>
-                    <p>Moeilijkheidsgraad: <?= $recepten['difficulty']; ?></p>
-                    <p>Spicyness: <?= $recepten['spicyness']; ?></p>
-                    <p>Vleessoort: <?= $recepten['meat_type']; ?></p>
-                    <p>Info: <?= $recepten['info']; ?></p>
-                    <article class="star">
-                        <a href="#"><i class='bx bxs-star' ></i></a>
-                        <a href="#"><i class='bx bxs-star' ></i></a>
-                        <a href="#"><i class='bx bxs-star' ></i></a>
-                        <a href="#"><i class='bx bxs-star' ></i></a>
-                        <a href="#"><i class='bx bxs-star' ></i></a>
-                    </article>
-                </article>
-            <?php endforeach; ?>
-        </article>
-    </section>
+	</section>
 
 		<section class="contact" id="contact">
 			<div class="main-contact">
@@ -137,7 +126,7 @@ require_once "helperJ.php";
 
 	<script src="https://unpkg.com/scrollreveal"></script>
 	<script type="text/javascript" src="js/Pizza website.js"></script>
-	<script type="text/javascript" src="js/s.js"></script>
+	<script type="text/javascript" src="js/script.js"></script>
 
    
 </body>
