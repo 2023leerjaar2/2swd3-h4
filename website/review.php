@@ -77,7 +77,7 @@
 
             foreach (getReviews() as $allReviews) {?>
             <article>
-                <p>Naam: <?= $allReviews[1]?></p>
+                <p class="naam">Naam: <?= $allReviews[1]?></p>
                 <p>Recept: <?= $allReviews[2]?></p>
                 <p>Review: <?= $allReviews[3]?></p>
                 <p>Cijfer: <?= $allReviews[4]?></p>
